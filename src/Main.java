@@ -12,6 +12,10 @@ public class Main {
         String up = first.toUpperCase();
         String low = second.toLowerCase();
         String sum = up+low;
+
+
+        System.out.println();
         return sum;
+
     }
 }
