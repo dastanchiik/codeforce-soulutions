@@ -14,5 +14,6 @@ public class Main {
         String sum = up+low;
         System.out.println();
         return sum;
+
     }
 }
