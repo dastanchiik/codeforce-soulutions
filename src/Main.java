@@ -2,24 +2,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-    }
-    public static boolean isValid(char[] walk) {
-        int countN = 0;
-        int countS = 0;
-        int countW = 0;
-        int countE = 0;
-        for (char a: walk){
-            if (a == 'n'){
-                countN++;
-            } else if (a == 's') {
-                countS++;
-            } else if (a == 'w') {
-                countW++;
-            } else if (a == 'e') {
-                countE++;
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        String[] str = new String[a+1];
+        for (int i = 0; i <= a; i++) {
+            str[i] = scanner.nextLine();
+        }
+        for (String s:str){
+            if (s.length()>=11){
+            int length = s.length()-2;
+            String first = s.substring(0,1);
+            String last = s.substring(length+1);
+            String finish = first+length+last;
+            System.out.println(finish);
+            }else {
+                System.out.println(s);
             }
         }
-        return walk.length == 10 && countN == countS && countE == countW;
     }
 }
