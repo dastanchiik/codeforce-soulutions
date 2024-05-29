@@ -1,28 +1,26 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int a = scanner.nextInt();
-        int count = 0;
-        for (int i = 0; i < a; i++) {
-            String number = scanner.next();
-            int countLine = 0;
-            for (int j = 0; j < number.length(); j++) {
-                char[] c = number.toCharArray();
-                for (char q : c) {
-                    if (q == '1') {
-                        countLine++;
-                    }
-                    if (countLine > 3){
-                        countLine = 0;
-                    }
-                }
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Введите первое число: ");
+            int firstNumber = scanner.nextInt();
+            System.out.print("Введите второе число: ");
+            int secondNumber = scanner.nextInt();
+            Random random = new Random();
+            int r = random.nextInt(10,100);
+            int lowerBound;
+            int upperBound;
+            if (firstNumber < secondNumber) {
+                lowerBound = firstNumber;
+                upperBound = secondNumber;
+            } else {
+                lowerBound = secondNumber;
+                upperBound = firstNumber;
             }
-            if (countLine >= 2) {
-                count++;
-            }
+            int randomNumber = lowerBound + random.nextInt(upperBound - lowerBound + 1);
+            System.out.println("Случайное число: " + randomNumber);
+            scanner.close();
         }
-        System.out.println(count);
     }
-}
