@@ -4,22 +4,16 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
+        scanner.nextLine();
         int count = 0;
         for (int i = 0; i < a; i++) {
-            String number = scanner.next();
-            int countLine = 0;
-            for (int j = 0; j < number.length(); j++) {
-                char[] c = number.toCharArray();
-                for (char q : c) {
-                    if (q == '1') {
-                        countLine++;
-                    }
-                    if (countLine > 3){
-                        countLine = 0;
-                    }
-                }
-            }
-            if (countLine >= 2) {
+            String numbers = scanner.nextLine();
+            int num = Integer.parseInt(numbers.replace(" ", ""));
+            int b = (num / 100) % 10;
+            int c = (num / 10) % 10;
+            int d = num % 10;
+            int sum = b + c + d;
+            if (sum >= 2) {
                 count++;
             }
         }
