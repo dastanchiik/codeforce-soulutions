@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.OptionalInt;
 import java.util.Scanner;
 
 public class Main {
@@ -8,13 +10,15 @@ public class Main {
         for (int i = 0; i < array.length; i++) {
             array[i] = scanner.nextInt();
         }
-        int count = 0;
-        int num = scanner.nextInt();
-        for (int q:array){
-            if (q == num){
-                count++;
+        OptionalInt max = Arrays.stream(array).max();
+        OptionalInt min = Arrays.stream(array).min();
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == max.getAsInt()) {
+                array[i] = min.getAsInt();
             }
         }
-        System.out.println(count);
+        for (int r:array){
+            System.out.print(r+" ");
+        }
     }
 }
