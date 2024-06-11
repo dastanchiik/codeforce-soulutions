@@ -12,6 +12,7 @@ public class Main {
     }
 
     public static int[] selectionSort(int[] arr) {
+        int[] array = new int[arr.length];
         for (int i = arr.length - 1; i > 0; i--) {
             int maxIndex = i;
             for (int j = 0; j < i; j++) {
@@ -19,11 +20,13 @@ public class Main {
                     maxIndex = j;
                 }
             }
-            System.out.println(maxIndex);
+            array[i] = maxIndex;
             int temp = arr[maxIndex];
             arr[maxIndex] = arr[i];
             arr[i] = temp;
         }
-        return arr;
+        return array;
     }
 }
+//40 30 20 40 20
+//
