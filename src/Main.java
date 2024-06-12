@@ -1,38 +1,38 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-    private static int[] a = new int[0];
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int c = sc.nextInt();
-        a = new int[c];
+        int f = sc.nextInt();
+        int[] arr1 = new int[c];
+        int[] arr2 = new int[f];
         for (int i = 0; i < c; i++) {
-            a[i] = sc.nextInt();
+            arr1[i] = sc.nextInt();
         }
+        for (int i = 0; i < f; i++) {
+            arr2[i] = sc.nextInt();
+        }
+        method(arr1,arr2);
     }
-    public static void method(int l,int r){
-        if (l<r){
-            int x = a[(l+r)/2];
-            int i = l;
-            int j = r;
-            while (i <= j){
-                while (a[i]<x){
-                    i++;
-                }
-                while (a[j]> x){
-                    j--;
-                }
-            }
-            i++;
-            j++;
-            if (i <= j){
-                int temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+
+    public static void method(int[] arr1, int[] arr2) {
+        int l = 0;
+        int r = 0;
+        int index = arr1.length + arr2.length;
+        int[] ans = new int[index];
+        while (l < arr1.length || r < arr2.length) {
+            if (r == arr2.length || l < arr1.length && arr1[l] < arr2[r]) {
+                ans[l + r] = arr1[l];
+                l++;
+            } else {
+                ans[l + r] = arr2[r];
+                r++;
             }
         }
-        method(l,r);
-        method(l,r);
+        for (int e:ans){
+            System.out.print(e+" ");
+        }
     }
 }
