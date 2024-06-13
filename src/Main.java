@@ -20,11 +20,10 @@ public class Main {
     public static void method(int[] arr1, int[] arr2) {
         int l = 0;
         int r = 0;
-        int index = arr1.length + arr2.length;
-        int[] ans = new int[index];
         while (l < arr1.length || r < arr2.length) {
+        int count = 0;
             if (r == arr2.length || l < arr1.length && arr1[l] < arr2[r]) {
-                ans[l + r] = arr1[l];
+                count++;
                 l++;
             } else {
                 ans[l + r] = arr2[r];
