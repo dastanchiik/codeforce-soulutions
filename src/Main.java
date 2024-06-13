@@ -1,37 +1,31 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int c = sc.nextInt();
-        int f = sc.nextInt();
-        int[] arr1 = new int[c];
-        int[] arr2 = new int[f];
-        for (int i = 0; i < c; i++) {
-            arr1[i] = sc.nextInt();
+        int a = sc.nextInt();
+        long s = sc.nextLong();
+        long res = a + 1;
+        long[] arr = new long[a];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
         }
-        for (int i = 0; i < f; i++) {
-            arr2[i] = sc.nextInt();
-        }
-        method(arr1,arr2);
-    }
-
-    public static void method(int[] arr1, int[] arr2) {
+        long x = 0;
         int l = 0;
-        int r = 0;
-        while (l < arr1.length || r < arr2.length) {
-        int count = 0;
-            if (r == arr2.length || l < arr1.length && arr1[l] < arr2[r]) {
-                count++;
+        for (int i = 0; i < arr.length; i++) {
+            x += arr[i];
+            while (x >= s) {
+                if (x >= s) {
+                    res = Math.min(res, i - l + 1);
+                }
+                x -= arr[l];
                 l++;
-            } else {
-                ans[l + r] = arr2[r];
-                r++;
             }
         }
-        for (int e:ans){
-            System.out.print(e+" ");
+        if (res == a + 1) {
+            System.out.println(-1);
+        } else {
+            System.out.println(res);
         }
     }
 }
