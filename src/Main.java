@@ -4,26 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        long s = sc.nextLong();
-        long res = a + 1;
-        long[] arr = new long[a];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextInt();
-        }
-        long x = 0;
-        int l = 0;
-        for (int i = 0; i < arr.length - 1; i++) {
-            x += arr[i];
-            while (x > s) {
-                x -= arr[l];
-                l++;
-                res += i - l + 1;
+        int b = sc.nextInt();
+        int max = Math.max(a,b);
+        int min = Math.min(a,b);
+            double d = (double) max /min;
+            if (Math.floor(d) == d){
+                System.out.println(1);
+            }else {
+                System.out.println(666);
             }
-        }
-        if (res == a + 1) {
-            System.out.println(-1);
-        } else {
-            System.out.println(res);
-        }
     }
 }
