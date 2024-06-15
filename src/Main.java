@@ -12,14 +12,12 @@ public class Main {
         }
         long x = 0;
         int l = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             x += arr[i];
-            while (x >= s) {
-                if (x >= s) {
-                    res = Math.min(res, i - l + 1);
-                }
+            while (x > s) {
                 x -= arr[l];
                 l++;
+                res += i - l + 1;
             }
         }
         if (res == a + 1) {
