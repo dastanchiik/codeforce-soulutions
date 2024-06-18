@@ -3,15 +3,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int max = Math.max(a,b);
-        int min = Math.min(a,b);
-            double d = (double) max /min;
-            if (Math.floor(d) == d){
-                System.out.println(1);
-            }else {
-                System.out.println(666);
-            }
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int a = k/n;
+        int apple = k%n;
+        int p = 0;
+        int sum = k-(a*n);
+        System.out.println(a);
+        System.out.println(sum);
+        if (apple == 0){
+            p = 0;
+        }else {
+            p = n - apple;
+        }
+        System.out.println(p);
     }
 }
