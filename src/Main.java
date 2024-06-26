@@ -7,11 +7,14 @@ public class Main {
         int b = scanner.nextInt();
         int c = scanner.nextInt();
         int e = scanner.nextInt();
-        if (a % 2 == 1 && c % 2 == 1 && b % 2 == 0 && e % 2 == 0) {
+        int max = Math.max(a, c);
+        int max1 = Math.max(b, e);
+        int min = Math.min(a, c);
+        int min1 = Math.min(b, e);
+        if (max - min <= 2 && max1 - min1 == 2) {
             System.out.println("YES");
-        } else {
-            System.out.println("NO");
-        }
-
+        } else if (max - min == 2 && max1 - min1 <= 2) {
+            System.out.println("YES");
+    } else System.out.println("NO");
     }
 }
