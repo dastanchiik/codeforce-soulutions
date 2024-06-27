@@ -7,11 +7,27 @@ public class Main {
         int b = scanner.nextInt();
         int c = scanner.nextInt();
         int e = scanner.nextInt();
-        int sum1 = e - b;
-        if (b == 2 && a == c && sum1 == 2 && e>b) {
+        int placeFirst = 0;
+        int placeSecond = 0;
+        if (a % 2 == 1 && b % 2 == 1) {
+            placeFirst = 2;
+        } else if (a % 2 == 0 && b % 2 == 0) {
+            placeFirst = 2;
+        } else if ((a % 2 == 0 && b % 2 == 1) || (a % 2 == 1 && b % 2 == 0)) {
+            placeFirst = 1;
+        }
+        if (c % 2 == 1 && e % 2 == 1) {
+            placeSecond = 2;
+        } else if (c % 2 == 0 && e % 2 == 0) {
+            placeSecond = 2;
+        } else if ((c % 2 == 0 && e % 2 == 1) || (c % 2 == 1 && e % 2 == 0)) {
+            placeSecond = 1;
+        }
+
+        if (placeFirst == placeSecond){
             System.out.println("YES");
-        } else if (b > 2 && sum1 == 1 && a == c && e > b) {
-            System.out.println("YES");
-        } else System.out.println("NO");
+        }else {
+            System.out.println("NO");
+        }
     }
 }
