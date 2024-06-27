@@ -4,15 +4,20 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int mod1 = a%10;
-        int mod2 = (a/10)%10;
-        int mod3 = (a/100)%10;
-        int mod4 = (a/1000)%10;
-        if (mod1 == mod4 && mod2 == mod3){
-            System.out.println("YES");
+        int count1 = 0;
+        int count2 = 0;
+        for (int i = 0; i < 4; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            count1 += a;
+            count2 += b;
+        }
+        if (count1 > count2){
+            System.out.println(1);
+        } else if (count2 == count1) {
+            System.out.println("DRAW");
         }else {
-            System.out.println("NO");
+            System.out.println(2);
         }
     }
 }
