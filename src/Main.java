@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        method();
+    }
+    public static void method(){
         Scanner sc = new Scanner(System.in);
         ArrayList<Person>people = new ArrayList<>();
         System.out.println("1 --> Create new Person\n2 --> find person by id\n3 --> get All people\n4 --> delete all people");
