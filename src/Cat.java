@@ -1,21 +1,10 @@
-public class Person {
-    private int id;
+public class Cat extends Animals{
     private String name;
     private int age;
 
-    public Person(int id, String name, int age) {
-        this.id = id;
+    public Cat(String name, int age) {
         this.name = name;
         this.age = age;
-    }
-    public Person(){}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -36,9 +25,10 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person:" +
-                "id = " + id +
-                ", name = '" + name + '\'' +
-                ", age = " + age;
+        return "Cat{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
+
