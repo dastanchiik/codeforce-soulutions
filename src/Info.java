@@ -1,7 +1,5 @@
-public class Info <T,U>{
+public class Info <T> {
     private T name;
-    private U age;
-
     public Info(T name) {
         this.name = name;
     }

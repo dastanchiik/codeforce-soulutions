@@ -1,19 +1,25 @@
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        MyFunction function = new MyFunction() {
-            @Override
-            public void calculate(int a, int b) {
-                int sum = a +b;
-                System.out.println(sum);
-            }
-        };
-        function.calculate(10,10);
-        MyFunction function1 = (a,b) -> System.out.println(a+b);
-        function1.calculate(10,10);
-    }
-    public static <T> void method(T a){
-        System.out.println(a);
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
+
+        if (a+b==c){
+            System.out.println("YES");
+        } else if (a + c == b) {
+            System.out.println("YES");
+        } else if (b + c == a) {
+            System.out.println("YES");
+        }else {
+            System.out.println("NO");
+        }
     }
 }

@@ -1,4 +1,4 @@
 @FunctionalInterface
-public interface MyFunction {
-    void calculate(int a,int b);
+public interface MyFunction<T> {
+    T calculate(T a,T b);
 }
